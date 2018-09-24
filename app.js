@@ -1,23 +1,11 @@
-var todos = ["item 1", "item 2"]
+var express = require('express');
 
-function addTodo(todo) {
-  todos.push(todo);
-  displayTodos()
-}
+var app = express();
 
-//funtion sleep(ms) {
-//  return new Promise(resolve => setTimeout(resolve, ms));
-//}
+app.get('/', function(require, response) {
+  response.send('Hello AceGod code_js rocks');
+})
 
-async function displayTodos(){
-  console.log("My todos:", todos);
-  //await sleep(2000);
-}
-
-function changeTodo(pos, newVal) {
-  todos[pos] = newVal;
-  displayTodos();
-}
-
-addTodo("new todo")
-changeTodo(0, 'chnaged')
+app.listen(3000, function() {
+  console.log('listening on port 3000');
+});
